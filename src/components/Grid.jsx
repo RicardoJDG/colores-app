@@ -41,7 +41,7 @@ const Grid = () => {
         ) : (
           <div className="color-container">
             {colores.map((color) => (
-              <Color colorInfo={color} />
+              <Color key={color.id} colorInfo={color} />
             ))}
           </div>
         )}

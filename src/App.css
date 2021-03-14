@@ -16,7 +16,6 @@ body {
   border-radius: 25px;
   margin: 2px;
   justify-content: space-between;
-  transition: ease-in 2s;
 }
 
 .color-picker .name-and-code {
@@ -46,4 +45,25 @@ body {
   border-radius: 25px;
   border: 1px solid;
   margin: 2px;
+}
+
+@media only screen and (max-width: 1260px) {
+  .color-picker {
+    width: 32%;
+  }
+
+  .color-container {
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-height: 630px) {
+  .color-picker {
+    font-size: x-small;
+    justify-content: flex-start;
+  }
+
+  .color-picker .pantone {
+    margin: 0;
+  }
 }
