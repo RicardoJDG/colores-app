@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Container, Button } from "@material-ui/core";
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import Color from "./Color";
 
 const Grid = () => {
   //Definimos variables y colores a usar
   const [colores, setColores] = useState();
   const [pageNum, setPageNum] = useState(1);
-  let URL = `https://reqres.in/api/colors?page=${pageNum}`;
 
   useEffect(() => {
+    const URL = `https://reqres.in/api/colors?page=${pageNum}`;
     fetch(URL)
       .then((res) => res.json())
       .then((json) => {
@@ -44,10 +46,18 @@ const Grid = () => {
           </div>
         )}
         <div className="footer">
-          <Button onClick={handlePrev} color="secondary">
+          <Button
+            onClick={handlePrev}
+            color="secondary"
+            startIcon={<ArrowLeftIcon />}
+          >
             Anterior
           </Button>
-          <Button onClick={handleNext} color="primary">
+          <Button
+            onClick={handleNext}
+            color="primary"
+            endIcon={<ArrowRightIcon />}
+          >
             Siguiente
           </Button>
         </div>
